@@ -52,3 +52,42 @@ for link in anchors:
         linkText = "https://codewithharry.com"+link.get('href') #we need to write https://xyz at the first to get the full link
         all_links.add(link) #adding the links inside the all_links set
         print(linkText)
+
+
+#get tag with id = "navbarSupportedContent"
+navbarSupportedContent = soup.find(id="navbarSupportedContent")
+print(navbarSupportedContent)
+#print the tag's children
+print(navbarSupportedContent.children())
+
+#print it's content (tags, text,etc)
+# print(navbarSupportedContent.contents)
+
+#print content in formatted way
+for elem in navbarSupportedContent.contents:
+    print(elem)
+
+#   .content and .children are almost same thing with few differences
+
+#print text inside the tag
+for elem in navbarSupportedContent.string:
+    print(elem)
+
+#print text inside the tag in listed order
+for elem in navbarSupportedContent.stripped_strings:
+    print(elem)
+
+#print(navbarSupportedContent.parent) #prints the parent
+
+#print(navbarSupportedContent.parents) #prints the parents and we have to iterate it using loop
+for items in navbarSupportedContent.parents:
+    print(items.name)#prints name of body tag, html tag, all parent tag
+
+
+# print(navbarSupportedContent.next_sibling) #prints next sibling 
+# print(navbarSupportedContent.previous_sibling) #prints previous sibling 
+
+#we can print it multiple times 
+# print(navbarSupportedContent.previous_sibling.previous_sibling)
+
+#Explore beautifulSoup yourself more!!!
